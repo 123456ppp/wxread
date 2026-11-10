@@ -7,7 +7,7 @@ query为空 cancel-in-progress: 真正的# 取消任何正在进行的相同并�
 在:
 时间表:
     #凌晨任务：you you you you you 01:07（UTC 17:07），you's GitHub Actions
-    - 定时任务: '0 21 * * *'
+    - cron: '0 21 * * *'
     # 早间任务：北京时间每天 05:00（UTC 前一天 21:00）
     #- cron: '0 21 * * *'
     #午间任务：你想怎样看11:40（协调世界时03:40）
