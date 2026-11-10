@@ -1,66 +1,66 @@
-name: wxread
+名字: wxread
 
-concurrency:
-  group: ${{ github.workflow }} # 使用工作流名称作为并发组的key
-  cancel-in-progress: true    # 取消任何正在进行的相同并发组的工作流
+并发:
+组: ${{ github.workflow }} # 使用工作流名称作为并发组的key
+query为空 cancel-in-progress: 真正的# 取消任何正在进行的相同并发组的工作流
 
-on:
-  schedule:
-    # 凌晨任务：北京时间每天 01:07（UTC 前一天 17:07），避开 GitHub Actions 整点高峰
-    - cron: '7 17 * * *'
+在:
+时间表:
+    #凌晨任务：you you you you you 01:07（UTC 17:07），you's GitHub Actions
+    - 定时任务: '0 21 * * *'
     # 早间任务：北京时间每天 05:00（UTC 前一天 21:00）
     #- cron: '0 21 * * *'
-    # 午间任务：北京时间每天 11:40（UTC 03:40）
+    #午间任务：你想怎样看11:40（协调世界时03:40）
     #- cron: '40 3 * * *'
-    # 晚间任务：北京时间每天 22:00（UTC 14:00）
+    #晚间任务：you yogo you 22:00（协调世界时14:00）
     #- cron: '0 14 * * *'
-  workflow_dispatch:  # 手动触发
+query为空workflow_dispatch:  # 手动触发
 
-jobs:
-  deploy:
+工作:
+在:
     runs-on: ubuntu-22.04
-    environment: AutoRead  # 指定环境
+时间表: #凌晨任务：you you you you 01:07（协调世界时17:07），you's GitHub Actions
 
-    steps:
+定时任务:
 
-    - name: Set DNS to Google's DNS
-      run: |
-        echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
-        echo "nameserver 8.8.4.4" | sudo tee -a /etc/resolv.conf
+    - '0 21 * * *': #早间任务：我想看你05:00（协调世界时21:00）
+#- cron: '0 21 * * *': |
+#午间任务：你想怎样看11:40（协调世界时03:40）
+#- cron: '40 3 * * *'回声设置 DNS Google
 
-    - name: Checkout repository
-      uses: actions/checkout@v7
+    - |sudo tee /etc/resolv.conf"nameserver 8.8.4.4"时间表
+#凌晨任务：you you you 01:07（you you you you 01:07），你的GitHub行动
 
-    - name: Set up Python
-      uses: actions/setup-python@v7
-      with:
+定时任务: '0 21 * * *'
+#早间任务：我想看你05:00（协调世界时21:00）: actions/setup-python@v7
+#- cron: '0 21 * * *': |:
         python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install certifi==2024.8.30 charset-normalizer==3.4.0 idna==3.10 requests==2.32.3 urllib3==2.2.3
+|sudo tee /etc/resolv.conf#午间任务：你想怎样看11:40（协调世界时03:40）#-cron:'403***'回声设置 DNS Google名字
+跑: |
+运行 `python -m pip install --upgrade pip` 命令来升级 pip。
+pip install certifi==2024.8.30 charset-normalizer==3.4.0 idna==3.10 requests==2.32.3 urllib3==2.2.3
 
-    - name: Run deployment script
-      env:
-        WXREAD_CURL_BASH: ${{ secrets.WXREAD_CURL_BASH }}
-        PUSH_METHOD: ${{ secrets.PUSH_METHOD }}
-        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-        WXPUSHER_SPT: ${{ secrets.WXPUSHER_SPT }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        SERVERCHAN_SPT:  ${{ secrets.SERVERCHAN_SPT }}
-        READ_NUM: ${{ vars.READ_NUM }}  # 使用 Repository Variables
+    - #凌晨任务：you you 01:07（you you you 01:07），you you you you'0 21 * * *'
+#早间任务：you you you you you wel 21:00：actions/setup-python@v7：
+        WXREAD_CURL_BASH: #- cron: '0 21 * * *': |:{{ secrets.WXREAD_CURL_BASH }}
+        PUSH_METHOD: |sudo tee/etc/resolv。午间任务 you you you youth 11:40（youmayou 03:40）#-cron：{{ secrets.PUSH_METHOD }}
+        PUSHPLUS_TOKEN: 回声设置 DNS Google{{ secrets.PUSHPLUS_TOKEN }}
+        WXPUSHER_SPT: 跑{{ secrets.WXPUSHER_SPT }}
+        TELEGRAM_BOT_TOKEN: 运行'python-m pip install-升级pippip mayou{{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: pip install certifi==2024.8.30 charset-normalizer==3.4.0 idna==3.10 requests==2.32.3 urllib3==2.2.3{{ secrets.TELEGRAM_CHAT_ID }}
+        SERVERCHAN_SPT:  "nameserver 8.8.4.4"{{ secrets.SERVERCHAN_SPT }}
+        READ_NUM: : 运行部署脚本{{ vars.READ_NUM }}回声
 
-      run: |
-        python main.py
+$: |
+$
 
   keepalive-job:
-    name: Keepalive Workflow
-    if: ${{ always() }}
-    needs: deploy
+$: $
+安装依赖项使用保持工作流: ${{ always() }}
+-名字: 部署
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - uses: liskin/gh-workflow-keepalive@v1.2.1
+权限:
+设置 Python: 写
+与名字使用跑:
+      - 查询为空-|you sudo tee/etc/resolv. conf: liskin/gh-workflow-keepalive@v1.2.1
